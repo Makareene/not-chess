@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Техническое задание — Not Chess</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 0 20px;
+      background: #fff;
+      color: #000;
+    }
+    h1, h2, h3 {
+      color: #333;
+    }
+    ul {
+      padding-left: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Not Chess</h1>
+
+  <h2>🎯 How the Game Works</h2>
+  <p>Win Conditions:</p>
+  <ol>
+    <li>Destroy the other player's King piece.</li>
+    <li>Leave the opponent with their King and Trap only (the rest of the pieces are destroyed).</li>
+    <li>The other player's King gets trapped or the player looses their ability to use the piece (Dominant).</li>
+  </ol>
+  <p>Draw:</p>
+    <ol>
+	<li>Only Kings and Traps are left on the board.</li>
+	</ol>
+  <h2>⏱ Gameplay</h2>
+  <h3>1. Initial Setup:</h3>
+  <ul>
+    <li>Game board 8×8.</li>
+    <li>Inventory interface: symbol + piece counter.</li>
+    <li>24 pieces: 21 attacking pieces and 3 special pieces.</li>
+    <li>Players arrange their pieces on their 3 rows (Player 1: 0–2, Player 2: 5–7).</li>
+    <li>Pieces:
+      <ul>
+        <li>👑 1 King</li>
+        <li>🛡️ 4 Warriors</li>
+        <li>🧙 4 Wizards</li>
+        <li>🏹 4 Rangers</li>
+        <li>🔪 4 Rouges</li>
+        <li>🙏 4 Monks</li>
+        <li>⚠️ 1 Mimic</li>
+        <li>🕳️ 1 Trap</li>
+        <li>🔁 1 Dominant</li>
+      </ul>
+    </li>
+	<li>Buttons:
+	   <ul>
+	<li>Confirm — check the number of pieces on the board or end the turn.</li>
+    <li>Auto-arrange — the pieces get arranged randomly. Pressing the button again re-arranges the pieces.</li>
+    <li>Clean — remove all pieces from the board.</li>
+    <li>Reset — reset the game.</li>
+	   </ul>
+	</li>
+    <li>The pieces are coloured accordingly to the player's colour: blue/red.</li>
+    <li>Opponent's pieces are hid behind ❓ during the arrangement.</li>
+  </ul>
+
+  <h3>2. Movement:</h3>
+  <ul>
+    <li>Players make their moves in turns.</li>
+    <li>When selecting a piece the squares for possible turns lit up.</li>
+    <li>Pieces can move to one vacant square next to them and one vacant square diagonally or they can attack the opponent's neighboring pieces.</li>
+    <li>Special pieces can move but can't attack.</li>
+	<li>Traps can't move.</li>
+    <li>Players can't attack their own pieces.</li>
+    <li>Pieces are hid behind ❓ before getting attacked.</li>
+  </ul>
+
+  <h3>3. End of the Game:</h3>
+  <ul>
+    <li>The game ends if one of the win conditions has been met.</li>
+  </ul>
+
+  <h2>⚔️ Battle System</h2>
+  <ul>
+    <li>🏹 Ranger > 🔪 Rouge, 🙏 Monk.</li>
+    <li>🔪 Rouge > 🛡️ Warrior, 🧙 Wizard.</li>
+    <li>🧙 Wizard > 🏹 Ranger, 🛡️ Warrior.</li>
+    <li>🙏 Monk > 🧙 Wizard, 🔪 Rouge.</li>
+    <li>🛡️ Warrior > 🏹 Ranger, 🙏 Monk.</li>
+    <li>👑 The King > any opponent's piece if attacks first.</li>
+    <li>👑 The King looses if gets attaсked.</li>
+    <li>👑 The King steps on a Trap → both pieces disappear → player with the remaning King wins.</li>
+    <li>👑 The King attacks opponent's Dominant piece → player looses their ability to use their King → opponent wins.</li>
+    <li>The same pieces get destroyed when attack each other.</li>
+  </ul>
+
+  <h2>★ Special Pieces</h2>
+  <ul>
+    <li>⚠️ Mimic — when a piece attacks the Mimic, the attacking piece looses it's ability to move for 2 turns, then the Mimic disappeares.</li>
+    <li>🕳️ Trap — when a piece attacks the Trap, both it and the Trap disappear.</li>
+    <li>🔁 Dominant — when a piece attacks the Dominant, the attaking player looses their ability to use the piece. Player with the Dominant becomes the new owner of said piece, then the Dominant disappears. </li>
+  </ul>
+
+  <h2>ℹ️ In Addition</h2>
+  <ul>
+    <li>The name of the game contains the version number.</li>
+    <li>The code is in modules.</li>
+    <li>Status message, effects, win.</li>
+    <li>The game ends automatically in a draw or when one of win conditions has been met.</li>
+  </ul>
+</body>
+</html>
