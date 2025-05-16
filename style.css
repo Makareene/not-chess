@@ -133,7 +133,7 @@ button:hover {
 	background-color: rgba(255, 0, 0, 0.2); /* красная подсветка */
 }
 
-.docs-links a {
+#docs-links a {
 	color: #fff;
 }
 
