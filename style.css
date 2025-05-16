@@ -1,125 +1,164 @@
 /* Основной размер клетки */
 :root {
-  --cell-size: 60px;
+  /* #board { padding: 84px; } */
+  /* 84px = 84*100/973 = 8.63309352518% */
+  /* --max-size = 973px - меняем --max-size и/или #board padding, тогда поменяются и эти цифры. */
+	--cell-size: 60px;
+  --max-size: 973px;
+  --board-width: 8.63309352518; /* 84px */
+  --board-gap: 1px;
+	background: url('Design/Game/Map/Background.webp') #000;
+	margin: 0 auto;
+	max-width: var(--max-size);
+  min-width: 320px;
+}
+
+body {
+	margin: 0;
 }
 
 /* Финальный экран */
 .end-screen {
-  font-size: 24px;
-  text-align: center;
-  padding: 40px;
-  background-color: #222;
-  color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+	font-size: 24px;
+	text-align: center;
+	padding: 40px;
+	background-color: #222;
+	color: #fff;
+	border-radius: 12px;
+	box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
 
 /* Блокировка доски */
 #board.disabled .cell {
-  pointer-events: none;
-  opacity: 0.6;
+	pointer-events: none;
+	opacity: 0.6;
 }
 
 /* Подсветка атак и ходов */
 .cell.available-move {
-  background-color: rgba(100, 200, 255, 0.4);
+	background-color: rgba(100, 200, 255, 0.4);
 }
 
 .cell.available-attack {
-  background-color: rgba(255, 100, 100, 0.4);
+	background-color: rgba(255, 100, 100, 0.4);
 }
 
 /* Подсветка выбранной клетки */
 .cell.highlight {
-  outline: 3px solid yellow;
+	outline: 3px solid yellow;
 }
 
 /* Примерные базовые стили для ячеек и доски */
 #board {
-  display: grid;
-  grid-template-columns: repeat(var(--board-size), var(--cell-size));
-  grid-template-rows: repeat(var(--board-size), var(--cell-size));
-  gap: 2px;
+	display: grid;
+	grid-template-columns: repeat(var(--board-size), calc(var(--doc-width) / var(--board-size) - (var(--doc-width) * var(--board-width) / 100 / var(--board-size) * 2) - var(--board-gap)));
+	grid-template-rows: repeat(var(--board-size), calc(var(--doc-width) / var(--board-size) - (var(--doc-width) * var(--board-width) / 100 / var(--board-size) * 2) - var(--board-gap)));
+  max-width: var(--max-size);
+  max-height: var(--max-size);
+  background: url('Design/Game/Map/Playing_field.webp') no-repeat #fff;
+  gap: var(--board-gap);
+  padding: calc(var(--doc-width) * var(--board-width) / 100);
+  background-size: var(--doc-width);
 }
 
 .cell {
-  width: var(--cell-size);
-  height: var(--cell-size);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-  border: 1px solid #ccc;
-  background-color: #f0f0f0;
-  cursor: pointer;
-  user-select: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	user-select: none;
+  position: relative;
+}
+
+.cell:not([data-col="7"])::after {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 1px;
+  height: 100%;
+  background: #000;
+  right: -1px;
+}
+
+.cell:not([data-row="7"])::before {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: #000;
+  bottom: -1px;
 }
 
 .inventory-item {
-  display: inline-block;
-  margin: 4px;
-  padding: 6px 10px;
-  background-color: #ddd;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 18px;
+	display: inline-block;
+	margin: 4px;
+	padding: 6px 10px;
+	background-color: #ddd;
+	border-radius: 6px;
+	cursor: pointer;
+	font-size: 18px;
 }
 
 #status {
-  margin-top: 10px;
-  font-size: 18px;
-  font-weight: bold;
+	margin-top: 10px;
+	font-size: 18px;
+	font-weight: bold;
 }
 
 button {
-  padding: 8px 16px;
-  font-size: 16px;
-  border-radius: 8px;
-  border: none;
-  background-color: #4CAF50;
-  color: white;
-  cursor: pointer;
+	padding: 8px 16px;
+	font-size: 16px;
+	border-radius: 8px;
+	border: none;
+	background-color: #4CAF50;
+	color: white;
+	cursor: pointer;
 }
 
 button:hover {
-  background-color: #45a049;
+	background-color: #45a049;
 }
 
 .inventory-item.selected {
-  outline: 2px solid yellow;
-  background-color: #444;
+	outline: 2px solid yellow;
+	background-color: #444;
 }
 
 .player1 {
-  background-color: rgba(0, 128, 255, 0.2); /* синяя подсветка */
+	background-color: rgba(0, 128, 255, 0.2); /* синяя подсветка */
 }
 
 .player2 {
-  background-color: rgba(255, 0, 0, 0.2); /* красная подсветка */
+	background-color: rgba(255, 0, 0, 0.2); /* красная подсветка */
+}
+
+.docs-links a {
+	color: #fff;
 }
 
 @media (max-width: 600px) {
-  #board {
-    --cell-size: 40px;
-  }
+	#board {
+		--cell-size: 40px;
+	}
 
-  #inventory {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    font-size: 1.4rem;
-  }
+	#inventory {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		font-size: 1.4rem;
+	}
 
-  .inventory-item {
-    padding: 8px;
-  }
+	.inventory-item {
+		padding: 8px;
+	}
 
-  #controls {
-    flex-direction: column;
-    gap: 0.5em;
-  }
+	#controls {
+		flex-direction: column;
+		gap: 0.5em;
+	}
 
-  h1, #status, #player-indicator {
-    font-size: 1.2rem;
-    text-align: center;
-  }
+	h1, #status, #player-indicator {
+		font-size: 1.2rem;
+		text-align: center;
+	}
 }

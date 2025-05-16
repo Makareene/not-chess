@@ -1,74 +1,85 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title data-i18n="title">Not Chess v0.1</title>
+	<meta charset="UTF-8">
+	<title data-i18n="title">Not Chess v0.1</title>
 
-  <!-- Подключение библиотеки jQuery для удобной работы с DOM и событиями -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<!-- Подключение библиотеки jQuery для удобной работы с DOM и событиями -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-  <script>
-    const BOARD_SIZE = 8; // глобальная константа BOARD_SIZE для задания размеров доски
+	<script>
+		const BOARD_SIZE = 8; // глобальная константа BOARD_SIZE для задания размеров доски
     document.documentElement.style.setProperty('--board-size', BOARD_SIZE);
     const HIDDEN_SYMBOL = '❓'; // символ для скрытия фигуры
-  </script>
+    
+    $(document).ready(function() {
+      document.documentElement.style.setProperty('--doc-width', $(document.documentElement).width() +'px');
+    });
+    
+    window.onload = function() {
+      document.documentElement.style.setProperty('--doc-width', $(document.documentElement).width() +'px');
+    };
+    
+    window.onresize = function() {
+      document.documentElement.style.setProperty('--doc-width', $(document.documentElement).width() +'px');
+    };
+    
+	</script>
 
-  <!-- Подключение CSS стилей игры -->
-  <link rel="stylesheet" href="style.css">
+	<!-- Подключение CSS стилей игры -->
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1 data-i18n="title">Not Chess v0.1</h1>
+	<!-- <h1 data-i18n="title">Not Chess v0.1</h1> -->
 
-  <label for="language-select" data-i18n="label_language">Язык:</label>
-  <select id="language-select">
-    <option value="ru">Русский</option>
-    <option value="en">English</option>
-  </select>
+	<div id="docs-links">
+		<a href="docs.html" target="_blank" data-i18n="link_docs">📄 Техзадание</a>
+		<a href="plan.html" target="_blank" data-i18n="link_plan">🗂️ План реализации</a>
+    <select id="language-select">
+      <option value="ru">Русский</option>
+      <option value="en">English</option>
+    </select>
+	</div>
 
-  <div id="docs-links">
-    <a href="docs.html" target="_blank" data-i18n="link_docs">📄 Техническое задание</a> |
-    <a href="plan.html" target="_blank" data-i18n="link_plan">🗂️ План реализации</a>
-  </div>
+	<div id="current-player-display" data-i18n="player_moves">Сейчас ходит игрок 1</div>
 
-  <div id="current-player-display" data-i18n="player_moves">Сейчас ходит игрок 1</div>
+	<div id="board"></div>
+	
+	<div id="inventory"></div>
+	
+	<div id="controls">
+		<button id="confirm-placement-button" data-i18n="button_confirm">Подтвердить расстановку</button>
+		<button id="auto-place-button" data-i18n="button_auto">Авторасстановка</button>
+		<button id="clear-board-button" data-i18n="button_clear">Очистить доску</button>
+		<button id="reset-button" data-i18n="button_reset">Сброс игры</button>
+	</div>
+	
+	<div id="status" data-i18n="just_start">Статус: ждём начала</div>
+	
+	<div id="end-screen" style="display: none;">
+		<h2 id="end-message" data-i18n="end_message">Игра окончена</h2>
+		<button id="start-new-game-button" data-i18n="start_new_game">Начать заново</button>
+	</div>
 
-  <div id="board"></div>
-  
-  <div id="inventory"></div>
-  
-  <div id="controls">
-    <button id="confirm-placement-button" data-i18n="button_confirm">Подтвердить расстановку</button>
-    <button id="auto-place-button" data-i18n="button_auto">Авторасстановка</button>
-    <button id="clear-board-button" data-i18n="button_clear">Очистить доску</button>
-    <button id="reset-button" data-i18n="button_reset">Сброс игры</button>
-  </div>
-  
-  <div id="status" data-i18n="just_start">Статус: ждём начала</div>
-  
-  <div id="end-screen" style="display: none;">
-    <h2 id="end-message" data-i18n="end_message">Игра окончена</h2>
-    <button id="start-new-game-button" data-i18n="start_new_game">Начать заново</button>
-  </div>
+	<!-- data.js: содержит данные и конфигурацию фигур -->
+	<script src="data.js"></script>
 
-  <!-- data.js: содержит данные и конфигурацию фигур -->
-  <script src="data.js"></script>
+	<!-- lang.js: переводы и смена языка -->
+	<script src="lang.js"></script>
 
-  <!-- lang.js: переводы и смена языка -->
-  <script src="lang.js"></script>
+	<!-- logic_setup.js: реализует игровую механику и правила (фаза расстановки) -->
+	<script src="logic_setup.js"></script>
+	
+	<!-- logic_battle.js: реализует игровую механику и правила (фаза боя) -->
+	<script src="logic_battle.js"></script>
+	
+	<!-- logic_end.js: реализует игровую механику и правила (фаза окончания игры) -->
+	<script src="logic_end.js"></script>
 
-  <!-- logic_setup.js: реализует игровую механику и правила (фаза расстановки) -->
-  <script src="logic_setup.js"></script>
-  
-  <!-- logic_battle.js: реализует игровую механику и правила (фаза боя) -->
-  <script src="logic_battle.js"></script>
-  
-  <!-- logic_end.js: реализует игровую механику и правила (фаза окончания игры) -->
-  <script src="logic_end.js"></script>
+	<!-- ui.js: отвечает за отображение элементов интерфейса и взаимодействие с DOM -->
+	<script src="ui.js"></script>
 
-  <!-- ui.js: отвечает за отображение элементов интерфейса и взаимодействие с DOM -->
-  <script src="ui.js"></script>
-
-  <!-- main.js: инициализирует игру, управляет фазами и обработкой событий -->
-  <script src="main.js"></script>
+	<!-- main.js: инициализирует игру, управляет фазами и обработкой событий -->
+	<script src="main.js"></script>
 </body>
 </html>
