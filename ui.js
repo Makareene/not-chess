@@ -14,10 +14,17 @@ function renderBoard(board) {
       const figure = board[row][col];
       if (figure) {
         const isVisible = figure.owner === currentPlayer || figure.revealed;
-        const symbol = isVisible ? (FIGURE_SYMBOLS[figure.type] || '?') : HIDDEN_SYMBOL;
-        cell.text(symbol);
-        if (figure.owner === 1) cell.addClass('player1');
-        else if (figure.owner === 2) cell.addClass('player2');
+        const symbol = isVisible ? (FIGURE_SYMBOLS[figure.type] || HIDDEN_SYMBOL) : HIDDEN_SYMBOL;
+        // cell.text(symbol);
+        let mypath = null;
+        if (figure.owner === 1) {
+           mypath = isVisible? FIGURE_MINI1_PATH +'/'+ FIGURE_MINI1[figure.type]: HIDDEN_SYMBOL_PATH;
+          cell.addClass('player1');
+        } else if (figure.owner === 2) {
+           mypath = isVisible? FIGURE_MINI2_PATH +'/'+ FIGURE_MINI2[figure.type]: HIDDEN_SYMBOL_PATH;
+          cell.addClass('player2');
+        }
+        if ( mypath ) cell.css('background-image', "url('"+ mypath +"')");
         if (figure.hidden) cell.addClass('hidden');
       }
 
