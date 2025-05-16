@@ -49,6 +49,31 @@ const FIGURE_MINI2 = {
   [FIGURE_TYPES.DOMINANT]: '9_2_Dominant.webp'
 };
 
+// карточки фигур
+const FIGURE_CARD1 = {
+  [FIGURE_TYPES.KING]: '1_King.webp',
+  [FIGURE_TYPES.WARRIOR]: '2_Warrior.webp',
+  [FIGURE_TYPES.WIZARD]: '3_Wizard.webp',
+  [FIGURE_TYPES.RANGER]: '4_Ranger.webp',
+  [FIGURE_TYPES.ROUGE]: '5_Rouge.webp',
+  [FIGURE_TYPES.MONK]: '6_Monk.webp',
+  [FIGURE_TYPES.MIMIC]: '7_Mimic.webp',
+  [FIGURE_TYPES.TRAP]: '8_Trap.webp',
+  [FIGURE_TYPES.DOMINANT]: '9_Dominant.webp'
+};
+
+const FIGURE_CARD2 = {
+  [FIGURE_TYPES.KING]: '1_King.webp',
+  [FIGURE_TYPES.WARRIOR]: '2_Warrior.webp',
+  [FIGURE_TYPES.WIZARD]: '3_Wizard.webp',
+  [FIGURE_TYPES.RANGER]: '4_Ranger.webp',
+  [FIGURE_TYPES.ROUGE]: '5_Rouge.webp',
+  [FIGURE_TYPES.MONK]: '6_Monk.webp',
+  [FIGURE_TYPES.MIMIC]: '7_Mimic.webp',
+  [FIGURE_TYPES.TRAP]: '8_Trap.webp',
+  [FIGURE_TYPES.DOMINANT]: '9_Dominant.webp'
+};
+
 // пути
 const FIGURE_MINI1_PATH = 'Design/Cards/DOG';
 const FIGURE_MINI2_PATH = 'Design/Cards/DOG';

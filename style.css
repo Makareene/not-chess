@@ -58,7 +58,7 @@ body {
   background: url('Design/Game/Map/Playing_field.webp') no-repeat #fff;
   gap: var(--board-gap);
   padding: calc(var(--doc-width) * var(--board-width) / 100);
-  background-size: var(--doc-width);
+  background-size: 100%;
 }
 
 .cell {
@@ -91,14 +91,31 @@ body {
   bottom: -1px;
 }
 
+#inventory {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: calc(var(--doc-width) / 3);
+}
+
 .inventory-item {
-	display: inline-block;
-	margin: 4px;
-	padding: 6px 10px;
-	background-color: #ddd;
-	border-radius: 6px;
 	cursor: pointer;
-	font-size: 18px;
+  background-size: 300%;
+  width: calc(100% / 9);
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.inventory-item::after {
+  content: attr(data-cnt);
+  position: absolute;
+  left: 10px;
+  bottom: 2px;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 700;
 }
 
 #status {
@@ -122,8 +139,17 @@ button:hover {
 }
 
 .inventory-item.selected {
-	outline: 2px solid yellow;
-	background-color: #444;
+	width: calc(100% / 3);
+  z-index: 1;
+  background-size: 100%;
+}
+
+.inventory-item.selected[data-figure="trap"] {
+  margin-left: calc(100% / 9 * -1);
+}
+
+.inventory-item.selected[data-figure="dominant"] {
+  margin-left: calc(100% / 4.5 * -1);
 }
 
 .player1 {
@@ -142,20 +168,6 @@ button:hover {
 }
 
 @media (max-width: 600px) {
-	#board {
-		--cell-size: 40px;
-	}
-
-	#inventory {
-		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		font-size: 1.4rem;
-	}
-
-	.inventory-item {
-		padding: 8px;
-	}
-
 	#controls {
 		flex-direction: column;
 		gap: 0.5em;

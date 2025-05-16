@@ -37,11 +37,20 @@ function renderBoard(board) {
 function renderInventory(inventory) {
   const inventoryElement = $('#inventory');
   inventoryElement.empty();
-
+  
+  let cnt = 0;
   for (const [type, count] of Object.entries(inventory)) {
+    let mypath = FIGURE_MINI2_PATH +'/';
+    if ( currentPlayer === 1 ) {
+      mypath += FIGURE_CARD1[type];
+    } else {
+      mypath += FIGURE_CARD2[type];
+    }
     const item = $('<div></div>').addClass('inventory-item')
       .attr('data-figure', type)
-      .text(`${FIGURE_SYMBOLS[type] || '?'} x${count}`);
+      .attr({'data-figure': type, 'data-cnt': count})
+      .css({'background-image': "url('"+ mypath +"')", left: 'calc(100% / 9 * '+ cnt +')'});
+    cnt++;
     inventoryElement.append(item);
   }
 }
@@ -54,7 +63,7 @@ function highlightCell(row, col) {
 
 // Обновление счётчика фигур в инвентаре
 function updateInventoryCount(type, count) {
-  $(`.inventory-item[data-figure=${type}]`).text(`${FIGURE_SYMBOLS[type] || '?'} x${count}`);
+  $(`.inventory-item[data-figure=${type}]`).attr('data-cnt', count);
 }
 
 // Отображение статусного сообщения
