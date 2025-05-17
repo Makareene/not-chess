@@ -273,4 +273,11 @@ body {
   #status {
     font-size: 1.2rem;
   }
+  #cards #current-player-display {
+    bottom: calc(100% - 5px);
+  }
+  #cards #current-player-display span {
+    padding: 5px;
+    font-size: 1.2rem;
+  }
 }
