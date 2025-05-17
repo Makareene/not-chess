@@ -215,6 +215,8 @@ body {
 @media (max-width: 800px) {
 	#top {
     flex-wrap: wrap;
+  }
+  #center {
     order: 3;
   }
   #docs-links,
