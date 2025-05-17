@@ -252,10 +252,17 @@ body {
   width: 100%;
   text-align: center;
   color: yellow;
+  z-index: 1;
 }
 
 #cards #current-player-display span {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.65);
+  padding: 10px;
+  font-size: 1.5rem;
+}
+
+#end-screen {
+  display: none !important;
 }
 
 @media (max-width: 440px) {
