@@ -45,7 +45,8 @@ body {
 
 /* Подсветка выбранной клетки */
 .cell.highlight {
-	outline: 3px solid yellow;
+	box-shadow: inset 0px 0px 13px yellow;
+  z-index: 1;
 }
 
 /* Примерные базовые стили для ячеек и доски */
@@ -153,6 +154,10 @@ body {
 	color: #fff;
 }
 
+#docs-links a {
+  margin-right: 10px;
+}
+
 #controls button {
   width: 100px;
   height: 100px;
@@ -205,7 +210,7 @@ body {
 }
 
 #docs-links ul {
-  margin: 0;
+  margin: 0 0 10px;
   padding: 0;
   list-style: none;
   display: flex;
@@ -222,5 +227,43 @@ body {
   #docs-links,
   #last {
     width: 50%;
+  }
+}
+
+#language-select {
+  background-image: url('Design/Game/Buttons/Line.webp');
+  border: 0;
+  background-color: transparent;
+  background-size: 100%;
+  height: 24px;
+  width: 100px;
+  background-position-y: -37px;
+  padding: 0 25px;
+}
+
+#cards {
+  position: relative;
+}
+
+#cards #current-player-display {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: yellow;
+}
+
+#cards #current-player-display span {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 440px) {
+	#controls button {
+    width: 70px;
+    height: 70px;
+  }
+  #status {
+    font-size: 1.2rem;
   }
 }

@@ -102,6 +102,7 @@ function createInitialInventory() {
 
 // Логика выбора фигуры из инвентаря
 function handleInventoryClick(element) {
+  if ( currentPhase != 'setup' ) return;
   const type = element.getAttribute('data-figure');
   
   figureTried = FIGURE_SYMBOLS[type] || '?';

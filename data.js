@@ -76,7 +76,7 @@ const FIGURE_CARD2 = {
 
 // пути
 const FIGURE_MINI1_PATH = 'Design/Cards/DOG';
-const FIGURE_MINI2_PATH = 'Design/Cards/DOG';
+const FIGURE_MINI2_PATH = 'Design/Cards/PEPE';
 
 // Начальные количества фигур на игрока
 const INITIAL_FIGURE_COUNTS = {
