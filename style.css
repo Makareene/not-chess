@@ -182,7 +182,7 @@ body {
   background-image: url('Design/Game/Buttons/Сlean_out.webp');
 }
 
-#controls #clear-board-button {
+#controls #reset-button {
   background-image: url('Design/Game/Buttons/Reset.webp');
 }
 
