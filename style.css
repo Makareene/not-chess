@@ -186,6 +186,24 @@ body {
   background-image: url('Design/Game/Buttons/Reset.webp');
 }
 
+#top {
+  display: flex;
+}
+
+#center {
+  flex-basis: 100%;
+  text-align: center;
+}
+
+#last {
+  text-align: right;
+}
+
+#docs-links,
+#last {
+  width: 20%;
+}
+
 @media (max-width: 600px) {
 	
 }
