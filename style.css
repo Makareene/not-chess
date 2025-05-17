@@ -124,20 +124,6 @@ body {
 	font-weight: bold;
 }
 
-button {
-	padding: 8px 16px;
-	font-size: 16px;
-	border-radius: 8px;
-	border: none;
-	background-color: #4CAF50;
-	color: white;
-	cursor: pointer;
-}
-
-button:hover {
-	background-color: #45a049;
-}
-
 .inventory-item.selected {
 	width: calc(100% / 3);
   z-index: 1;
@@ -167,12 +153,39 @@ button:hover {
 	color: #fff;
 }
 
-@media (max-width: 600px) {
-	#controls {
-		flex-direction: column;
-		gap: 0.5em;
-	}
+#controls button {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  background-size: 100%;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  border-radius: 5px;
+}
 
+#controls button:hover,
+#controls button:focus {
+	background-color: #555;
+}
+
+#controls #confirm-placement-button {
+  background: url('Design/Game/Buttons/Confirm.webp');
+}
+
+#controls #auto-place-button {
+  background: url('Design/Game/Buttons/AUTO.webp');
+}
+
+#controls #clear-board-button {
+  background: url('Design/Game/Buttons/Сlean_out.webp');
+}
+
+#controls #clear-board-button {
+  background: url('Design/Game/Buttons/Reset.webp');
+}
+
+@media (max-width: 600px) {
 	h1, #status, #player-indicator {
 		font-size: 1.2rem;
 		text-align: center;
