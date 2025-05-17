@@ -119,9 +119,10 @@ body {
 }
 
 #status {
-	margin-top: 10px;
-	font-size: 18px;
+	margin: 10px 0;
 	font-weight: bold;
+  font-size: 1.5rem;
+  text-align: center;
 }
 
 .inventory-item.selected {
@@ -147,15 +148,14 @@ body {
 }
 
 #docs-links a,
-#current-player-display,
 #status,
 #end-screen {
 	color: #fff;
 }
 
 #controls button {
-  width: 60px;
-  height: 60px;
+  width: 100px;
+  height: 100px;
   cursor: pointer;
   background-size: 100%;
   border: 0;
@@ -187,8 +187,5 @@ body {
 }
 
 @media (max-width: 600px) {
-	h1, #status, #player-indicator {
-		font-size: 1.2rem;
-		text-align: center;
-	}
+	
 }

@@ -33,30 +33,39 @@
 </head>
 <body>
 	<!-- <h1 data-i18n="title">Not Chess v0.1</h1> -->
-
-	<div id="docs-links">
-		<a href="docs.html" target="_blank" data-i18n="link_docs">📄 Техзадание</a>
-		<a href="plan.html" target="_blank" data-i18n="link_plan">🗂️ План реализации</a>
-    <select id="language-select">
-      <option value="ru">Русский</option>
-      <option value="en">English</option>
-    </select>
-	</div>
   
-  <div id="controls">
-		<button id="confirm-placement-button" data-i18n="button_confirm" title="Подтвердить расстановку"></button>
-		<button id="auto-place-button" data-i18n="button_auto" title="Авторасстановка"></button>
-		<button id="clear-board-button" data-i18n="button_clear" title="Очистить доску"></button>
-		<button id="reset-button" data-i18n="button_reset" title="Сброс игры"></button>
-	</div>
-
-	<div id="current-player-display" data-i18n="player_moves">Сейчас ходит игрок 1</div>
+  <div id="top">
+    
+    <div id="docs-links">
+      <a href="docs.html" target="_blank" data-i18n="link_docs">📄 Техзадание</a>
+      <a href="plan.html" target="_blank" data-i18n="link_plan">🗂️ План реализации</a>
+    </div>
+    
+    <div id="center">
+      <div id="controls">
+        <button id="confirm-placement-button" data-i18n="button_confirm" title="Подтвердить расстановку"></button>
+        <button id="auto-place-button" data-i18n="button_auto" title="Авторасстановка"></button>
+        <button id="clear-board-button" data-i18n="button_clear" title="Очистить доску"></button>
+        <button id="reset-button" data-i18n="button_reset" title="Сброс игры"></button>
+      </div>
+      
+      <div id="status" data-i18n="just_start">Статус: ждём начала</div>
+    </div>
+    
+    <div id="last">
+      <select id="language-select">
+        <option value="ru">Русский</option>
+        <option value="en">English</option>
+      </select>
+    </div>
+    
+  </div>
 
 	<div id="board"></div>
 	
 	<div id="inventory"></div>
-	
-	<div id="status" data-i18n="just_start">Статус: ждём начала</div>
+
+	<div id="current-player-display" data-i18n="player_moves">Сейчас ходит игрок 1</div>
 	
 	<div id="end-screen" style="display: none;">
 		<h2 id="end-message" data-i18n="end_message">Игра окончена</h2>
