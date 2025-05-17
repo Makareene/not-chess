@@ -108,8 +108,12 @@ function updateInterfaceLanguage() {
 			finalText = finalText.replace(/{(\w+)}/g, (_, name) => {
 				return typeof window[name] !== 'undefined' ? window[name] : `{${name}}`;
 			});
-
-			$(this).text(finalText);
+      
+      if ( $(this.parentNode).is('#controls') ) {
+        $(this).attr('title', finalText);
+      } else {
+        $(this).text(finalText);
+      }
 		}
 		
 		let doc_link = null;
