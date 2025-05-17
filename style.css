@@ -215,5 +215,10 @@ body {
 @media (max-width: 800px) {
 	#top {
     flex-wrap: wrap;
+    order: 3;
+  }
+  #docs-links,
+  #last {
+    width: 50%;
   }
 }
