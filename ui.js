@@ -40,11 +40,11 @@ function renderInventory(inventory) {
   
   let cnt = 0;
   for (const [type, count] of Object.entries(inventory)) {
-    let mypath = FIGURE_MINI2_PATH +'/';
+    let mypath = null;
     if ( currentPlayer === 1 ) {
-      mypath += FIGURE_CARD1[type];
+      mypath = FIGURE_MINI1_PATH +'/'+ FIGURE_CARD1[type];
     } else {
-      mypath += FIGURE_CARD2[type];
+      mypath = FIGURE_MINI2_PATH +'/'+ FIGURE_CARD2[type];
     }
     const item = $('<div></div>').addClass('inventory-item')
       .attr('data-figure', type)
@@ -135,7 +135,7 @@ function createEmptyBoard() {
 }
 
 function updateCurrentPlayerDisplay() {
-  const display = document.getElementById('current-player-display');
+  const display = $('#current-player-display > span').get(0);
   display.dataset.i18n = 'player_moves';
   display.textContent = t("player_moves", { currentPlayer: currentPlayer });
 }
