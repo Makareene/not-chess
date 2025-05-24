@@ -21,17 +21,17 @@ function handleCellClickBattlePhase(cellElement) {
       return;
     }
     
-    figureTried = FIGURE_NAMES[currentLang][cell.type];
+    figureTried = cell.type;
 
     if (cell && cell.disabledTurns && cell.disabledTurns > 0) {
       disabledTurns = cell.disabledTurns;
-      updateStatusMessage(t("disabled_turns", { figureTried: figureTried, disabledTurns: disabledTurns }), 'disabled_turns');
+      updateStatusMessage(t("disabled_turns", { figureTried: FIGURE_NAMES[currentLang][figureTried], disabledTurns: disabledTurns }), 'disabled_turns');
       return;
     }
     
     selectedCell = { row, col };
     highlightCell(row, col);
-    updateStatusMessage(t("figure_chose", { figureTried: figureTried }), 'figure_chose');
+    updateStatusMessage(t("figure_chose", { figureTried: FIGURE_NAMES[currentLang][figureTried] }), 'figure_chose');
     return;
   }
 

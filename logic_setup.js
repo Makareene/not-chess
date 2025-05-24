@@ -107,17 +107,17 @@ function handleInventoryClick(element) {
   if ( currentPhase != 'setup' ) return;
   const type = element.getAttribute('data-figure');
   
-  figureTried = FIGURE_NAMES[currentLang][type] || '?';
+  figureTried = type || '?';
 
   // Если фигура недоступна — игнорируем
   if (!inventory[type] || inventory[type] <= 0) {
-    updateStatusMessage(t("figure_tried", { figureTried: figureTried }), 'figure_tried');
+    updateStatusMessage(t("figure_tried", { figureTried: FIGURE_NAMES[currentLang][figureTried] }), 'figure_tried');
     return;
   }
 
   selectedFigure = type;
   highlightInventorySelection(type); // визуальное выделение
-  updateStatusMessage(t("figure_chose", { figureTried: figureTried }), 'figure_chose');
+  updateStatusMessage(t("figure_chose", { figureTried: FIGURE_NAMES[currentLang][figureTried] }), 'figure_chose');
 }
 // Обработка клика по клетке доски в фазе расстановки
 function handleCellClickSetupPhase(cellElement) {
@@ -163,10 +163,10 @@ function placeFigure(row, col, type, player) {
     owner: player,
     visible: true
   };
-  figureTried = FIGURE_NAMES[currentLang][type] || '?';
+  figureTried = type || '?';
   curRow = row;
   curCol = col;
-  updateStatusMessage(t("was_placed_in", { figureTried: figureTried, curRow: curRow, curCol: curCol }), 'was_placed_in');
+  updateStatusMessage(t("was_placed_in", { figureTried: FIGURE_NAMES[currentLang][figureTried], curRow: curRow, curCol: curCol }), 'was_placed_in');
 }
 
 // Удаление фигуры с доски и возврат в инвентарь
@@ -177,8 +177,8 @@ function removeFigure(row, col) {
     inventory[figure.type]++;
     renderBoard(board);
     updateInventoryCount(figure.type, inventory[figure.type]);
-    figureTried = FIGURE_NAMES[currentLang][figure.type] || '?';
-    updateStatusMessage(t("returned_to_inventory", { figureTried: figureTried }), 'returned_to_inventory');
+    figureTried = figure.type || '?';
+    updateStatusMessage(t("returned_to_inventory", { figureTried: FIGURE_NAMES[currentLang][figureTried] }), 'returned_to_inventory');
   }
 }
 

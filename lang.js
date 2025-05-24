@@ -106,7 +106,7 @@ function updateInterfaceLanguage() {
 			// Автозамена глобальных переменных в {var}
 			let finalText = translated;
 			finalText = finalText.replace(/{(\w+)}/g, (_, name) => {
-				return typeof window[name] !== 'undefined' ? window[name] : `{${name}}`;
+				return typeof window[name] !== 'undefined' ? (name == 'figureTried'? FIGURE_NAMES[currentLang][figureTried]: window[name]) : `{${name}}`;
 			});
       
       if ( $(this.parentNode).is('#controls') ) {
