@@ -111,13 +111,15 @@ function handleInventoryClick(element) {
 
   // Если фигура недоступна — игнорируем
   if (!inventory[type] || inventory[type] <= 0) {
+    selectedFigure = null;
     updateStatusMessage(t("figure_tried", { figureTried: FIGURE_NAMES[currentLang][figureTried] }), 'figure_tried');
-    return;
+  } else {
+    selectedFigure = type;
+    updateStatusMessage(t("figure_chose", { figureTried: FIGURE_NAMES[currentLang][figureTried] }), 'figure_chose');
   }
-
-  selectedFigure = type;
+  
   highlightInventorySelection(type); // визуальное выделение
-  updateStatusMessage(t("figure_chose", { figureTried: FIGURE_NAMES[currentLang][figureTried] }), 'figure_chose');
+  
 }
 // Обработка клика по клетке доски в фазе расстановки
 function handleCellClickSetupPhase(cellElement) {

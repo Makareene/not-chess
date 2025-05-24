@@ -38,12 +38,12 @@ const LANGUAGES = {
 		draw_kings: "Ничья! Остались только короли.",
 		only_neighboring_cell: "Можно ходить только на соседнюю клетку.",
 		not_own_piece: "Нельзя ходить на свою фигуру.",
-		attacker_dominanted: "{figureAttacker} столкнулся с Доминантом и теперь принадлежит противнику!",
-		attacker_mimiced: "{figureAttacker} столкнулся с Мимиком и пропускает {disabledTurnsCnt} ход(а).",
-		attacker_won: "{figureAttacker} победил {figureDefender}.",
-		attacker_lost: "{figureAttacker} проиграл {figureDefender}.",
+		attacker_dominanted: "{figureAttacker} столкнулся(ась) с Доминантом и теперь принадлежит противнику!",
+		attacker_mimiced: "{figureAttacker} столкнулся(ась) с Мимиком и пропускает {disabledTurnsCnt} ход(а).",
+		attacker_won: "{figureAttacker} победил(а) {figureDefender}.",
+		attacker_lost: "{figureAttacker} проиграл(а) {figureDefender}.",
 		attacker_draw: "{figureAttacker} и {figureDefender} уничтожены.",
-		attacker_moved: "{figureAttacker} сделал ход."
+		attacker_moved: "{figureAttacker} сделал(а) ход."
 	},
 	en: {
 		title: "Not Chess v0.1",
@@ -106,7 +106,7 @@ function updateInterfaceLanguage() {
 			// Автозамена глобальных переменных в {var}
 			let finalText = translated;
 			finalText = finalText.replace(/{(\w+)}/g, (_, name) => {
-				return typeof window[name] !== 'undefined' ? (name == 'figureTried'? FIGURE_NAMES[currentLang][figureTried]: window[name]) : `{${name}}`;
+				return typeof window[name] !== 'undefined' ? (['figureTried', 'figureAttacker', 'figureDefender'].includes(name)? FIGURE_NAMES[currentLang][figureTried]: window[name]) : `{${name}}`;
 			});
       
       if ( $(this.parentNode).is('#controls') ) {
