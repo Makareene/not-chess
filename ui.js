@@ -14,7 +14,7 @@ function renderBoard(board) {
       const figure = board[row][col];
       if (figure) {
         const isVisible = figure.owner === currentPlayer || figure.revealed;
-        const symbol = isVisible ? (FIGURE_SYMBOLS[figure.type] || HIDDEN_SYMBOL) : HIDDEN_SYMBOL;
+        const symbol = isVisible ? (FIGURE_NAMES[currentLang][figure.type] || HIDDEN_SYMBOL) : HIDDEN_SYMBOL;
         // cell.text(symbol);
         let mypath = null;
         if (figure.owner === 1) {

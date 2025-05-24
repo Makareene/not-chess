@@ -21,7 +21,7 @@ function handleCellClickBattlePhase(cellElement) {
       return;
     }
     
-    figureTried = FIGURE_SYMBOLS[cell.type];
+    figureTried = FIGURE_NAMES[currentLang][cell.type];
 
     if (cell && cell.disabledTurns && cell.disabledTurns > 0) {
       disabledTurns = cell.disabledTurns;
@@ -81,12 +81,12 @@ function attemptMove(fromRow, fromCol, toRow, toCol) {
     return;
   }
   
-  figureAttacker = FIGURE_SYMBOLS[attacker.type];
+  figureAttacker = FIGURE_NAMES[currentLang][attacker.type];
 
   // Обработка особых фигур
   if (defender) {
     const defType = defender.type;
-    figureDefender = FIGURE_SYMBOLS[defender.type];
+    figureDefender = FIGURE_NAMES[currentLang][defender.type];
 
     attacker.revealed = defender.revealed = true; // раскрываю обе фигуры, т.к. одна наступает на другую
 

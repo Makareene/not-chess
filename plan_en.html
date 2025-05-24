@@ -26,67 +26,67 @@
 
   <h2>I. Project Preparation</h2>
   <ol>
-    <li>Make the project structure: index.html, style.css, main.js, logic.js, ui.js, data.js, docs.html.</li>
-    <li>Connect JS and CSS files in index.html.</li>
-    <li>Set global constants (for example, BOARD_SIZE).</li>
+    <li>Create project structure: index.html, style.css, main.js, logic.js, ui.js, data.js, docs.html.</li>
+    <li>Link JS and CSS files in index.html.</li>
+    <li>Set global constants (e.g, BOARD_SIZE).</li>
   </ol>
 
   <h2>II. User Interface and Visualisation (UI)</h2>
   <ol start="4">
-    <li>Draw a playing board 8×8 (DOM-structure).</li>
-    <li>Make an inventory for the pieces: symbol + piece counter.</li>
-    <li>Make buttons: Confirm, Auto-arrange, Clean, Reset.</li>
-    <li>Make status message-box and visual effects.</li>
+    <li>Render 8×8 game board (DOM-structure).</li>
+    <li>Create piece inventory: symbol + piece counter.</li>
+    <li>Implement buttons: Confirm, Auto-arrange, Clean, Reset.</li>
+    <li>Add status message-box and visual effects.</li>
   </ol>
 
   <h2>III. Initial Setup</h2>
   <ol start="8">
-    <li>Make the inventory clickable: choice of pieces for arrangement.</li>
-    <li>Make the board clickable: placement of a selected piece and making count of the ammount of pieces.</li>
-    <li>Make a piece removeable by a click.</li>
-    <li>Implement players moving in turns.</li>
-    <li>Make checks by pressing the button "Check": 24 pieces, correct rows.</li>
-    <li>Add a 'Clean' button: remove all of player's pieces from the board.</li>
-    <li>Add a 'Reset' button: full arangement reset and turn reset.</li>
-    <li>Add an 'Auto-arrange' button: random arrangement.</li>
+    <li>Make inventory interactive: piece selection for arrangement.</li>
+    <li>Enable board interactivity: placement of selected pieces and track the ammount of pieces.</li>
+    <li>Make a piece removal on click.</li>
+    <li>Establish turn-based player movement.</li>
+    <li>Add 'Check' button functionality: verify all 24 pieces and correct rows.</li>
+    <li>Implement 'Clean' button: remove all player pieces from board.</li>
+    <li>Add 'Reset' button: full arangement and turn reset.</li>
+    <li>Implement 'Auto-arrange' button: random piece placement.</li>
   </ol>
 
   <h2>IV. Gameplay</h2>
   <ol start="16">
-    <li>Switch displayed pieces: hide opponents pieces behind (❓).</li>
-    <li>Work on choosing a piece: check if a piece is owned by the player.</li>
-    <li>Light up available turns: vacant squares and opponents pieces.</li>
-    <li>Allow pieces to move to vacant squares.</li>
-    <li>Work on attacks: results according to the battle system, removal of a defeated piece.</li>
-    <li>Remove the (❓) from a revealed piece.</li>
-    <li>Update status, pass the turn to the second player.</li>
+    <li>Toggle piece visibility: hide opponent's pieces (❓).</li>
+    <li>Implement piece selection: verify piece ownership.</li>
+    <li>Highlight available moves: vacant squares and opponents pieces.</li>
+    <li>Enable movement to vacant squares.</li>
+    <li>Implement combat system: results according to the battle system, remove defeated pieces.</li>
+    <li>Remove (❓) from revealed pieces.</li>
+    <li>Update game status and switch turns.</li>
   </ol>
 
   <h2>V. End of the Game</h2>
   <ol start="23">
-    <li>Check if one of the win conditions has been met after every turn.</li>
-    <li>Show the win announcement.</li>
-    <li>Block any moving attempts.</li>
-    <li>Suggest starting a new game.</li>
+    <li>Check win conditions after each turn.</li>
+    <li>Display victory message.</li>
+    <li>Disable further moves.</li>
+    <li>Offer new game option.</li>
   </ol>
 
   <h2>VI. Special Pieces</h2>
   <ol start="27">
-    <li>Make visual effects:
+    <li>Implement visual effects for:
       <ul>
-        <li>Mimic: blocks moving attempts of the attaker piece for 2 turns.</li>
-        <li>Trap: removes the attacker from the board.</li>
-        <li>Dominant: attaker piece becomes opponent's piece.</li>
+        <li>Mimic: blocks attacker's movement for 2 turns.</li>
+        <li>Trap: removes attacker from board.</li>
+        <li>Dominant: converts attaker opponent's piece.</li>
       </ul>
     </li>
     <li>Add activation visual effects.</li>
-    <li>Show visual effect notification.</li>
+    <li>Display effect notifications.</li>
   </ol>
 
-  <h2>VII. Check and End</h2>
+  <h2>VII. Testing and finalization</h2>
   <ol start="30">
-    <li>Check terms of reference (docs.html): the ammount of pieces, how the King behaves, visual effects.</li>
-    <li>Rewrite the game version number.</li>
+    <li>Verify terms of reference (docs.html): piece counts, King behavior, visual effects.</li>
+    <li>Update game version number.</li>
   </ol>
 </body>
 </html>

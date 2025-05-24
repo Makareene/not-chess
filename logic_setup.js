@@ -107,7 +107,7 @@ function handleInventoryClick(element) {
   if ( currentPhase != 'setup' ) return;
   const type = element.getAttribute('data-figure');
   
-  figureTried = FIGURE_SYMBOLS[type] || '?';
+  figureTried = FIGURE_NAMES[currentLang][type] || '?';
 
   // Если фигура недоступна — игнорируем
   if (!inventory[type] || inventory[type] <= 0) {
@@ -163,7 +163,7 @@ function placeFigure(row, col, type, player) {
     owner: player,
     visible: true
   };
-  figureTried = FIGURE_SYMBOLS[type] || '?';
+  figureTried = FIGURE_NAMES[currentLang][type] || '?';
   curRow = row;
   curCol = col;
   updateStatusMessage(t("was_placed_in", { figureTried: figureTried, curRow: curRow, curCol: curCol }), 'was_placed_in');
@@ -177,7 +177,7 @@ function removeFigure(row, col) {
     inventory[figure.type]++;
     renderBoard(board);
     updateInventoryCount(figure.type, inventory[figure.type]);
-    figureTried = FIGURE_SYMBOLS[figure.type] || '?';
+    figureTried = FIGURE_NAMES[currentLang][figure.type] || '?';
     updateStatusMessage(t("returned_to_inventory", { figureTried: figureTried }), 'returned_to_inventory');
   }
 }
