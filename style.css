@@ -244,6 +244,8 @@ body {
   appearance: none;
   background: url('Design/Game/Buttons/Line-Center.webp') repeat-x;
   background-size: auto 30px;
+  margin: 0px 12px;
+  padding: 0 10px;
 }
 
 #pre-select::before,
@@ -252,11 +254,16 @@ body {
   left: 0;
   top: 0;
   content: '';
-  width: 25px;
+  width: 12px;
   height: 30px;
   background: url('Design/Game/Buttons/Line.webp') no-repeat;
   background-position: left top;
   background-size: auto 30px;
+}
+
+#language-select option {
+  background-color: black;
+  color: white;
 }
 
 #pre-select::after {
