@@ -240,7 +240,6 @@ body {
 #language-select {
   height: 30px;
   padding: 0;
-  border: none;
   appearance: none;
   background: url('Design/Game/Buttons/Line-Center.webp') repeat-x;
   background-size: auto 30px;
@@ -261,15 +260,23 @@ body {
   background-size: auto 30px;
 }
 
+#pre-select::after {
+  background-position: right top;
+  left: auto;
+  right: 0;
+}
+
 #language-select option {
   background-color: black;
   color: white;
 }
 
-#pre-select::after {
-  background-position: right top;
-  left: auto;
-  right: 0;
+#language-select,
+#language-select:active,
+#language-select:focus,
+#language-select:hover {
+  border: none;
+  outline: none;
 }
 
 #cards {
