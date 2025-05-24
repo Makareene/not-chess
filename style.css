@@ -70,6 +70,8 @@ body {
 	user-select: none;
   position: relative;
   background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .cell:not([data-col="7"])::after {
@@ -231,14 +233,12 @@ body {
 }
 
 #language-select {
-  background-image: url('Design/Game/Buttons/Line.webp');
-  border: 0;
-  background-color: transparent;
-  background-size: 100%;
-  height: 24px;
-  width: 100px;
-  background-position-y: -37px;
-  padding: 0 25px;
+  height: 30px;
+  padding: 0;
+  border: none;
+  appearance: none;
+  background: url('Design/Game/Buttons/Line-Center.webp') repeat-x;
+  background-size: auto 30px;
 }
 
 #cards {
