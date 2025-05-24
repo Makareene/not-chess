@@ -232,6 +232,10 @@ body {
   }
 }
 
+#pre-select {
+  display: inline-block;
+}
+
 #language-select {
   position: relative;
   height: 30px;
@@ -242,8 +246,8 @@ body {
   background-size: auto 30px;
 }
 
-#language-select::before,
-#language-select::after {
+#pre-select::before,
+#pre-select::after {
   position: absolute;
   left: 0;
   top: 0;
@@ -255,7 +259,7 @@ body {
   background-size: auto 30px;
 }
 
-#language-select::after {
+#pre-select::after {
   background-position: right top;
   left: auto;
   right: 0;
