@@ -125,11 +125,11 @@ body {
   display: flex;
   align-items: center; /* вертикаль */
   justify-content: center; /* горизонталь */
-  min-height: 60px;
+  min-height: 68px;
 }
 
 #status {
-	margin: 10px 0;
+	margin: 5px 0;
 	font-weight: bold;
   font-size: 1.5rem;
   text-align: center;
@@ -338,7 +338,7 @@ body {
     height: 70px;
   }
   #pre-status {
-    min-height: 48px;
+    min-height: 56px;
   }
   #status {
     font-size: 1.2rem;
