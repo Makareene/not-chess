@@ -234,10 +234,10 @@ body {
 
 #pre-select {
   display: inline-block;
+  position: relative;
 }
 
 #language-select {
-  position: relative;
   height: 30px;
   padding: 0;
   border: none;
