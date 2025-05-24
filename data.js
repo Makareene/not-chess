@@ -27,7 +27,7 @@ const FIGURE_SYMBOLS = {
 // Наименования фигур
 const FIGURE_NAMES = {
   'ru': {
-    FIGURE_TYPES.KING]: 'Король',
+    [FIGURE_TYPES.KING]: 'Король',
     [FIGURE_TYPES.WARRIOR]: 'Воин',
     [FIGURE_TYPES.WIZARD]: 'Волшебник',
     [FIGURE_TYPES.RANGER]: 'Рейнджер',
@@ -38,7 +38,7 @@ const FIGURE_NAMES = {
     [FIGURE_TYPES.DOMINANT]: 'Доминант'
   },
   'en': {
-    FIGURE_TYPES.KING]: 'King',
+    [FIGURE_TYPES.KING]: 'King',
     [FIGURE_TYPES.WARRIOR]: 'Warrior',
     [FIGURE_TYPES.WIZARD]: 'Wizard',
     [FIGURE_TYPES.RANGER]: 'Ranger',
