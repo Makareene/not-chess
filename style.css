@@ -114,8 +114,8 @@ body {
 .inventory-item::after {
   content: attr(data-cnt);
   position: absolute;
-  left: 10px;
-  bottom: 2px;
+  left: 23.1267345051%;
+  bottom: 4.62487628456%;
   color: #fff;
   font-size: 1.5rem;
   font-weight: 700;
@@ -139,6 +139,10 @@ body {
 	width: calc(100% / 3);
   z-index: 1;
   background-size: 100%;
+}
+
+.inventory-item.selected::after {
+  left: 7.70812714093;
 }
 
 .inventory-item.selected[data-figure="trap"] {
@@ -315,8 +319,9 @@ body {
 
 #cards #current-player-display span {
   background-color: rgba(0, 0, 0, 0.65);
-  padding: 10px;
+  margin: 5px 0;
   font-size: 1.5rem;
+  display: inline-block;
 }
 
 #end-screen {
