@@ -33,6 +33,8 @@ function resetGame() {
   renderBoard(board);
   hideEndScreen();
   updateStatusMessage(t("begin_new_game", { currentPlayer: currentPlayer }), 'begin_new_game');
+  $('#inventory').css('display', 'block'); // показываем колоду
+  $('#current-player-display').css('display', 'none'); // прячем ход игрока
   updateCurrentPlayerDisplay(); // показываю какой игрок сейчас совершает действие
 }
 

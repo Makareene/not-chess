@@ -235,7 +235,7 @@ body {
 
 #docs-links,
 #last {
-  width: 30%;
+  width: 60%;
 }
 
 #docs-links ul {
@@ -308,18 +308,9 @@ body {
   outline: none;
 }
 
-#cards {
-  position: relative;
-}
-
 #cards #current-player-display {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
   text-align: center;
   color: yellow;
-  z-index: 1;
 }
 
 #cards #current-player-display span {
@@ -342,10 +333,6 @@ body {
   }
   #status {
     font-size: 1.2rem;
-  }
-  #cards #current-player-display {
-    top: auto;
-    bottom: calc(100% - 5px);
   }
   #cards #current-player-display span {
     padding: 5px;

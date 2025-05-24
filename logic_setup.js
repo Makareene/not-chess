@@ -33,6 +33,8 @@ function confirmPlacement() {
     renderBoard(board);
     updateStatusMessage(t("battle_began", { currentPlayer: currentPlayer }), 'battle_began');
     updateCurrentPlayerDisplay();
+    $('#inventory').css('display', 'none'); // прячем колоду
+    $('#current-player-display').css('display', 'block'); // показываем ход игрока
   }
   updateCurrentPlayerDisplay();
 }
