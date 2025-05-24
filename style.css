@@ -173,23 +173,23 @@ body {
 }
 
 #controls #confirm-placement-button {
-  background-image: url('Design/Game/Buttons/Confirm_1.webp'),
-                    url('Design/Game/Buttons/Confirm.webp');
+  background-image: url('Design/Game/Buttons/Confirm.webp'),
+                    url('Design/Game/Buttons/Confirm_1.webp');
 }
 
 #controls #auto-place-button {
-  background-image: url('Design/Game/Buttons/AUTO_1.webp'),
-                    url('Design/Game/Buttons/AUTO.webp');
+  background-image: url('Design/Game/Buttons/AUTO.webp'),
+                    url('Design/Game/Buttons/AUTO_1.webp');
 }
 
 #controls #clear-board-button {
-  background-image: url('Design/Game/Buttons/Сlean_out_1.webp'),
-                    url('Design/Game/Buttons/Сlean_out.webp');
+  background-image: url('Design/Game/Buttons/Сlean_out.webp'),
+                    url('Design/Game/Buttons/Сlean_out_1.webp');
 }
 
 #controls #reset-button {
-  background-image: url('Design/Game/Buttons/Reset_1.webp'),
-                    url('Design/Game/Buttons/Reset.webp');
+  background-image: url('Design/Game/Buttons/Reset.webp'),
+                    url('Design/Game/Buttons/Reset_1.webp');
 }
 
 #controls #confirm-placement-button:hover,
