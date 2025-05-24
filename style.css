@@ -121,6 +121,13 @@ body {
   font-weight: 700;
 }
 
+#pre-status {
+  display: flex;
+  align-items: center; /* вертикаль */
+  justify-content: center; /* горизонталь */
+  min-height: 60px;
+}
+
 #status {
 	margin: 10px 0;
 	font-weight: bold;
@@ -158,6 +165,7 @@ body {
 
 #docs-links a {
   margin-right: 10px;
+  text-decoration: none;
 }
 
 #controls button {
@@ -245,9 +253,11 @@ body {
   #center {
     order: 3;
   }
-  #docs-links,
+  #docs-links {
+    width: 70%;
+  }
   #last {
-    width: 50%;
+    width: 30%;
   }
 }
 
@@ -326,6 +336,9 @@ body {
 	#controls button {
     width: 70px;
     height: 70px;
+  }
+  #pre-status {
+    min-height: 48px;
   }
   #status {
     font-size: 1.2rem;
