@@ -142,7 +142,7 @@ body {
 }
 
 .inventory-item.selected::after {
-  left: 7.70812714093;
+  left: 7.70812714093%;
 }
 
 .inventory-item.selected[data-figure="trap"] {
