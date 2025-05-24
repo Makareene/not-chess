@@ -161,36 +161,55 @@ body {
 }
 
 #controls button {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   cursor: pointer;
   background-size: 100%;
   border: 0;
   padding: 0;
   margin: 0;
-  border-radius: 5px;
   background-color: transparent;
-}
-
-#controls button:hover,
-#controls button:focus {
-	background-color: #555;
+  background-repeat: no-repeat;
 }
 
 #controls #confirm-placement-button {
-  background-image: url('Design/Game/Buttons/Confirm.webp');
+  background-image: url('Design/Game/Buttons/Confirm_1.webp'),
+                    url('Design/Game/Buttons/Confirm.webp');
 }
 
 #controls #auto-place-button {
-  background-image: url('Design/Game/Buttons/AUTO.webp');
+  background-image: url('Design/Game/Buttons/AUTO_1.webp'),
+                    url('Design/Game/Buttons/AUTO.webp');
 }
 
 #controls #clear-board-button {
-  background-image: url('Design/Game/Buttons/Сlean_out.webp');
+  background-image: url('Design/Game/Buttons/Сlean_out_1.webp'),
+                    url('Design/Game/Buttons/Сlean_out.webp');
 }
 
 #controls #reset-button {
-  background-image: url('Design/Game/Buttons/Reset.webp');
+  background-image: url('Design/Game/Buttons/Reset_1.webp'),
+                    url('Design/Game/Buttons/Reset.webp');
+}
+
+#controls #confirm-placement-button:hover,
+#controls #confirm-placement-button:focus {
+	background-image: url('Design/Game/Buttons/Confirm_1.webp');
+}
+
+#controls #auto-place-button:hover,
+#controls #auto-place-button:focus {
+	background-image: url('Design/Game/Buttons/AUTO_1.webp');
+}
+
+#controls #clear-board-button:hover,
+#controls #clear-board-button:focus {
+	background-image: url('Design/Game/Buttons/Сlean_out_1.webp');
+}
+
+#controls #reset-button:hover,
+#controls #reset-button:focus {
+	background-image: url('Design/Game/Buttons/Reset_1.webp');
 }
 
 #top {
