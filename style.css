@@ -242,8 +242,8 @@ body {
   background-size: auto 30px;
 }
 
-#language-select:before,
-#language-select:after {
+#language-select::before,
+#language-select::after {
   position: absolute;
   left: 0;
   top: 0;
@@ -255,7 +255,7 @@ body {
   background-size: auto 30px;
 }
 
-#language-select:after {
+#language-select::after {
   background-position: right top;
   left: auto;
   right: 0;
