@@ -48,7 +48,7 @@ const LANGUAGES = {
 	en: {
 		title: "Not Chess v0.1",
     link_docs: "📄 Terms of reference",
-    link_plan: "🗂️ Project implementation plan",
+    link_plan: "🗂️ Implementation plan",
     current_player: "Player 1 is currently moving",
     button_confirm: "Confirm",
     button_auto: "Auto-arrange",

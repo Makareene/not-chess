@@ -115,6 +115,14 @@ function attemptMove(fromRow, fromCol, toRow, toCol) {
       updateCurrentPlayerDisplay();
       return;
     }
+    
+    if (defType === FIGURE_TYPES.TRAP && attacker.type === FIGURE_TYPES.KING) {
+      board[fromRow][fromCol] = null;
+      board[toRow][toCol] = null;
+      renderBoard(board);
+      endGame(3 - currentPlayer); // Победа соперника
+      return;
+    }
 
     // Стандартная боевая система
     const result = resolveCombat(attacker, defender);

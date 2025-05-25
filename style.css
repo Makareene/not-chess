@@ -125,7 +125,7 @@ body {
   display: flex;
   align-items: center; /* вертикаль */
   justify-content: center; /* горизонталь */
-  min-height: 68px;
+  min-height: 72px;
 }
 
 #status {
@@ -334,7 +334,7 @@ body {
     height: 70px;
   }
   #pre-status {
-    min-height: 56px;
+    min-height: 60px;
   }
   #status {
     font-size: 1.2rem;
