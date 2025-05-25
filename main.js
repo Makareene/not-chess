@@ -59,4 +59,36 @@ window.addEventListener('DOMContentLoaded', () => {
   document.getElementById('clear-board-button').addEventListener('click', clearBoard);
   document.getElementById('reset-button').addEventListener('click', resetGame);
   document.getElementById('start-new-game-button').addEventListener('click', resetGame);
+  
+  // Player
+  const playlist = [
+    'Audio/1.mp3',
+    'Audio/2.mp3',
+    'Audio/3.mp3',
+    'Audio/4.mp3',
+    'Audio/5.mp3'
+  ];
+
+  let currentTrackIndex = 0;
+  const audio = new Audio(playlist[currentTrackIndex]);
+
+  const toggleBtn = document.getElementById('player');
+
+  toggleBtn.addEventListener('click', () => {
+    if (audio.paused) {
+      audio.play();
+      $(toggleBtn).addClass('pause');
+    } else {
+      audio.pause();
+      $(toggleBtn).removeClass('pause');
+    }
+  });
+
+  audio.addEventListener('ended', () => {
+    currentTrackIndex = (currentTrackIndex + 1) % playlist.length;
+    audio.src = playlist[currentTrackIndex];
+    audio.play();
+    $(toggleBtn).removeClass('pause');
+  });
+  
 });
