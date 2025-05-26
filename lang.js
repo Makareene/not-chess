@@ -40,8 +40,8 @@ const LANGUAGES = {
 		not_own_piece: "Нельзя ходить на свою фигуру.",
 		attacker_dominanted: "{figureAttacker} столкнулся с Доминантом и теперь принадлежит противнику!",
 		attacker_mimiced: "{figureAttacker} столкнулся с Мимиком и пропускает {disabledTurnsCnt} ход(а).",
-		attacker_won: "{figureAttacker} победил {figureDefender}.",
-		attacker_lost: "{figureAttacker} проиграл {figureDefender}.",
+		attacker_won: "{figureAttacker} победил фигуру {figureDefender}.",
+		attacker_lost: "{figureAttacker} проиграл фигуре {figureDefender}.",
 		attacker_draw: "{figureAttacker} и {figureDefender} уничтожены.",
 		attacker_moved: "{figureAttacker} сделал ход."
 	},
