@@ -43,7 +43,7 @@ const LANGUAGES = {
 		attacker_won: "{figureAttacker} победил {figureDefender}.",
 		attacker_lost: "{figureAttacker} проиграл {figureDefender}.",
 		attacker_draw: "{figureAttacker} и {figureDefender} уничтожены.",
-		attacker_moved: "{figureAttacker} сделал(а) ход."
+		attacker_moved: "{figureAttacker} сделал ход."
 	},
 	en: {
 		title: "Not Chess v0.1",
