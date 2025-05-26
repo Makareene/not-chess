@@ -240,7 +240,7 @@ body {
 
 #docs-links,
 #last {
-  width: 60%;
+  width: 50%;
 }
 
 #docs-links ul {
@@ -257,6 +257,9 @@ body {
   }
   #center {
     order: 3;
+  }
+  #docs-links {
+    width: 60%;
   }
   #last {
     width: 40%;
